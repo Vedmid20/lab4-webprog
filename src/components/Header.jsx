@@ -15,7 +15,7 @@ function Header({ theme = 'light', onToggleTheme }) {
       <div className="hero-topline">
         <a className="wordmark" href="#top" aria-label="На початок сторінки">VM<span>.</span></a>
         <div className="hero-actions">
-          <span className="hero-index">РЕЗЮМЕ / 2026</span>
+          <span className="hero-index">РЕЗЮМЕ / 2026 · DEPLOYED ON VERCEL</span>
           <button type="button" className="theme-toggle" onClick={onToggleTheme}>
             {isDark ? 'Денний режим' : 'Нічний режим'}
           </button>
