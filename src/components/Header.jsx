@@ -3,14 +3,23 @@ const navigation = [
   { href: '#experience', label: 'Досвід' },
   { href: '#education', label: 'Освіта' },
   { href: '#skills', label: 'Навички' },
+  { href: '#reviews', label: 'Відгуки' },
+  { href: '/part1.html', label: 'Частина 1 (JS)' },
 ];
 
-function Header() {
+function Header({ theme = 'light', onToggleTheme }) {
+  const isDark = theme === 'dark';
+
   return (
     <header className="hero">
       <div className="hero-topline">
         <a className="wordmark" href="#top" aria-label="На початок сторінки">VM<span>.</span></a>
-        <span className="hero-index">РЕЗЮМЕ / 2026</span>
+        <div className="hero-actions">
+          <span className="hero-index">РЕЗЮМЕ / 2026</span>
+          <button type="button" className="theme-toggle" onClick={onToggleTheme}>
+            {isDark ? 'Денний режим' : 'Нічний режим'}
+          </button>
+        </div>
       </div>
       <div className="hero-main" id="top">
         <div>

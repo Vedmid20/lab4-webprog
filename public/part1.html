@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f2eb" />
+    <meta name="description" content="Резюме Мартиновича Віталія — Лабораторна робота №4, частина 1 (Vanilla JS)." />
+    <title>Віталій Мартинович — ЛР №4 (Частина 1, JS)</title>
+    <link rel="stylesheet" href="./part1.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-topline">
+        <a class="wordmark" href="#top" aria-label="На початок сторінки">VM<span>.</span></a>
+        <div class="hero-actions">
+          <span class="hero-index">РЕЗЮМЕ / 2026</span>
+          <button type="button" id="theme-toggle" class="theme-toggle">Нічний режим</button>
+        </div>
+      </div>
+      <div class="hero-main" id="top">
+        <div>
+          <p class="eyebrow"><span class="status-dot"></span> Відкритий до нових можливостей</p>
+          <h1>Мартинович<br /><span>Віталій</span></h1>
+        </div>
+        <div class="hero-aside">
+          <span class="hero-number">01</span>
+          <p>Junior cybersecurity<br />спеціаліст</p>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Навігація по резюме">
+        <a href="#about"><span>01</span>Про мене</a>
+        <a href="#experience"><span>02</span>Досвід</a>
+        <a href="#education"><span>03</span>Освіта</a>
+        <a href="#skills"><span>04</span>Навички</a>
+        <a href="#reviews"><span>05</span>Відгуки</a>
+        <a href="/"><span>06</span>Частина 2 (React)</a>
+      </nav>
+    </header>
+
+    <main class="resume-layout">
+      <aside class="resume-sidebar">
+        <section class="section-block" id="about">
+          <div class="section-heading">
+            <span class="section-number">01</span>
+            <h2>Про мене</h2>
+          </div>
+          <p class="about-copy">
+            Я студент, який вивчає вебпрограмування. Цікавлюся створенням сучасних
+            вебзастосунків та постійно вдосконалюю свої навички.
+          </p>
+        </section>
+
+        <section class="section-block" id="skills">
+          <div class="section-heading">
+            <span class="section-number">04</span>
+            <h2>Навички</h2>
+          </div>
+          <ul class="skill-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Git</li>
+            <li>GitHub</li>
+          </ul>
+          <div class="language-row">
+            <span>Англійська</span>
+            <span class="language-level">B1</span>
+          </div>
+        </section>
+
+        <section class="section-block" id="education">
+          <div class="section-heading">
+            <span class="section-number">03</span>
+            <h2>Освіта</h2>
+          </div>
+          <article class="education-item">
+            <h3>Національний університет «Львівська політехніка»</h3>
+            <p>Бакалавр, кібербезпека</p>
+            <span class="education-period">2025 — 2029</span>
+          </article>
+        </section>
+      </aside>
+
+      <div class="resume-content">
+        <section class="section-block experience-section" id="experience">
+          <div class="section-heading">
+            <span class="section-number">02</span>
+            <h2>Досвід роботи</h2>
+          </div>
+          <div class="experience-list">
+            <article class="experience-item">
+              <div class="experience-meta">
+                <span>2024 — теперішній час</span>
+                <span class="meta-mark">↗</span>
+              </div>
+              <div>
+                <h3>Junior Frontend Developer</h3>
+                <p class="company-name">Назва компанії</p>
+                <ul>
+                  <li>Верстка вебсторінок за макетами</li>
+                  <li>Робота з Git та GitHub</li>
+                  <li>Участь у код-рев'ю</li>
+                </ul>
+              </div>
+            </article>
+            <article class="experience-item">
+              <div class="experience-meta">
+                <span>2023 — 2024</span>
+                <span class="meta-mark">↗</span>
+              </div>
+              <div>
+                <h3>Стажер</h3>
+                <p class="company-name">Інша компанія</p>
+                <ul>
+                  <li>Допомога у розробці внутрішніх інструментів</li>
+                  <li>Тестування вебсайтів</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section-block reviews-section" id="reviews">
+          <div class="section-heading">
+            <span class="section-number">05</span>
+            <h2>Відгуки попередніх роботодавців</h2>
+          </div>
+          <p id="comments-status" class="reviews-status">Завантаження коментарів...</p>
+          <div id="comments-list" class="reviews-list" aria-live="polite"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <span class="footer-label">ЗВ'ЯЗОК</span>
+        <a class="footer-email" href="mailto:example@gmail.com">example@gmail.com</a>
+      </div>
+
+      <div class="footer-storage" aria-live="polite">
+        <span class="footer-label">ІНФОРМАЦІЯ З LOCALSTORAGE</span>
+        <ul id="localstorage-list" class="storage-list"></ul>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Мартинович Віталій</span>
+        <span>Львів, Україна</span>
+      </div>
+    </footer>
+
+    <div id="feedback-modal" class="modal-overlay hidden" role="presentation">
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="feedback-title">
+        <div class="modal-header">
+          <h2 id="feedback-title">Форма зворотного зв'язку</h2>
+          <button type="button" id="modal-close" class="modal-close" aria-label="Закрити форму">×</button>
+        </div>
+
+        <form class="feedback-form" action="https://formspree.io/f/xjywaann" method="POST">
+          <label>
+            Ім'я
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            Номер телефону
+            <input type="tel" name="phone" required />
+          </label>
+
+          <label>
+            Повідомлення
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <button type="submit" class="submit-button">Надіслати</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./part1.js"></script>
+  </body>
+</html>
